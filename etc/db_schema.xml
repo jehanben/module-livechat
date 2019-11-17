@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="live_chat_rule">
+        <column xsi:type="int" name="rule_id" padding="10" unsigned="true" nullable="false" comment="LiveChat rule Id"/>
+        <column xsi:type="varchar" name="rule_name" nullable="false" length="255" comment="LiveChat rule name"/>
+        <column xsi:type="varchar" name="rule_path" nullable="false" length="255" comment="LiveChat rule path"/>
+        <column xsi:type="int" name="rule_condition_id" padding="10" unsigned="false" nullable="false"
+                comment="LiveChat rule condition"/>
+        <column xsi:type="smallint" name="chat_active" padding="5" unsigned="true" nullable="false"
+                identity="false" default="0"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+        </constraint>
+    </table>
+</schema>

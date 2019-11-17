@@ -1,0 +1,14 @@
+{
+    "live_chat_rule": {
+        "column": {
+            "rule_id": true,
+            "rule_name": true,
+            "rule_path": true,
+            "rule_condition_id": true,
+            "chat_active": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
