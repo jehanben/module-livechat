@@ -5,4 +5,3 @@
     'Aligent_LiveChat',
     __DIR__
 );
-
