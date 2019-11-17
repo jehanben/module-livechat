@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Aligent_LiveChat::alg_livechat" title="Aligent Chat" translate="title" module="Aligent_LiveChat"
+             sortOrder="51" resource="Aligent_LiveChat::alg_livechat"/>
+        <add id="Aligent_LiveChat::rule" title="Add Group Rules" translate="title" module="Aligent_LiveChat"
+             sortOrder="1" action="aligentchat/grouprule" resource="Aligent_LiveChat::rule"
+             parent="Aligent_LiveChat::alg_livechat"/>
+    </menu>
+</config>
