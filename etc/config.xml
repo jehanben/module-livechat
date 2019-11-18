@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <aligent_livechat>
+            <general>
+                <enable>0</enable>
+            </general>
+            <advance>
+                <group>0</group>
+                <params>{"menu":{},"widget":{"window":{}}}</params>
+            </advance>
+        </aligent_livechat>
+    </default>
+</config>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="aligent" translate="label" sortOrder="250">
+            <label>Aligent LiveChat</label>
+        </tab>
+        <section id="aligent_livechat" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>LiveChat</label>
+            <tab>aligent</tab>
+            <resource>Aligent_LiveChat::livechat_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="license_number" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>License Number</label>
+                    <comment>
+                        <![CDATA[Add License Number to integrate with chat service]]>
+                    </comment>
+                </field>
+            </group>
+            <group id="advance" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advance Configuration</label>
+                <field id="group" translate="label" type="multiselect" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>LiveChat Group Rules</label>
+                    <source_model>Aligent\LiveChat\Model\Config\Source\ChatGroupRule\RuleSet</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment>
+                        <![CDATA[Group rules can be added from the following Aligent Chat -> Add Group Rules -> Add new rule ]]>
+                    </comment>
+                </field>
+                <field id="params" translate="label" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Parameters for Chat Widget</label>
+                    <comment>
+                        <![CDATA[
+                    Please pass the parameters in JSON format. Eg:
+                    {
+                       "chat-menu":{
+                          "id":"file",
+                          "value":"File",
+                          "popup":{
+                             "menuitem":[
+                                {
+                                   "value":"New",
+                                   "onclick":"CreateNewChat()"
+                                }
+                             ]
+                          },
+                          "widget":{
+                             "window":{
+                                "title":"Sample chat widget",
+                                "name":"main_window",
+                                "width":500,
+                                "height":500
+                             }
+                          }
+                       }
+                    }]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

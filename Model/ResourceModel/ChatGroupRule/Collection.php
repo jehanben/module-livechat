@@ -29,4 +29,15 @@ class Collection extends AbstractCollection
             'Aligent\LiveChat\Model\ResourceModel\ChatGroupRule'
         );
     }
+
+    /**
+     * Convert collection items to select options array
+     *
+     * @return array
+     */
+    public function toOptionArray()
+    {
+        $options = $this->_toOptionArray('rule_id', 'rule_name');
+        return $options;
+    }
 }
