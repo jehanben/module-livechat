@@ -11,18 +11,8 @@
             <item name="namespace" xsi:type="string">aligent_group_rule_form</item>
         </item>
         <item name="buttons" xsi:type="array">
-            <item name="back" xsi:type="array">
-                <item name="name" xsi:type="string">back</item>
-                <item name="label" xsi:type="string" translate="true">Back</item>
-                <item name="class" xsi:type="string">secondary</item>
-                <item name="url" xsi:type="string">*/*/</item>
-            </item>
-            <item name="save" xsi:type="array">
-                <item name="name" xsi:type="string">save</item>
-                <item name="label" xsi:type="string" translate="true">Save Rule</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/save</item>
-            </item>
+            <item name="back" xsi:type="string">Aligent\LiveChat\Block\Adminhtml\GroupRule\Edit\BackButton</item>
+            <item name="save" xsi:type="string">Aligent\LiveChat\Block\Adminhtml\GroupRule\Edit\SaveButton</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
@@ -36,6 +26,7 @@
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+                <item name="submit_url" path="*/*/save" xsi:type="url" />
             </item>
         </argument>
     </dataSource>

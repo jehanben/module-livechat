@@ -1,5 +1,10 @@
 <?php
-
+/**
+ *
+ * @category    Aligent
+ * @package     Aligent_LiveChat
+ * @author      Jehan Ryan <ryan.jehan@gmail.com>
+ */
 
 namespace Aligent\LiveChat\Model\ResourceModel\ChatGroupRule;
 
