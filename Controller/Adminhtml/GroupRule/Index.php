@@ -32,8 +32,9 @@ class Index extends Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('Rules')));
+        $resultPage->getConfig()->getTitle()->prepend((__('LiveChat Group Rules')));
         $resultPage->setActiveMenu('Aligent_LiveChat::alg_livechat');
+        $resultPage->addBreadcrumb(__('Aligent Live Chat'), __('Aligent Live Chat'));
 
         return $resultPage;
     }

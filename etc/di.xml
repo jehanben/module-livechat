@@ -1,4 +1,17 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Aligent\LiveChat\Model\ResourceModel\ChatGroupRule\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">live_chat_rule</argument>
+            <argument name="resourceModel" xsi:type="string">Aligent\LiveChat\Model\ResourceModel\ChatGroupRule</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="aligent_group_rule_listing_data_source" xsi:type="string">Aligent\LiveChat\Model\ResourceModel\ChatGroupRule\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

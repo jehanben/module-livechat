@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">aligent_group_rule_listing.aligent_group_rule_listing_data_source</item>
+            <item name="deps" xsi:type="string">aligent_group_rule_listing.aligent_group_rule_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">aligent_group_rule_listing_columns</item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">add</item>
+                <item name="label" xsi:type="string" translate="true">Add New Item</item>
+                <item name="class" xsi:type="string">primary</item>
+                <item name="url" xsi:type="string">*/*/new</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="aligent_group_rule_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">aligent_group_rule_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">rule_id</argument>
+            <argument name="requestFieldName" xsi:type="string">rule_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">rule_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <columns name="aligent_group_rule_listing_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">rule_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="rule_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Rule Name</item>
+                </item>
+            </argument>
+        </column>
+        <column name="rule_path">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Rule Path</item>
+                </item>
+            </argument>
+        </column>
+        <column name="rule_condition_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="array">
+                    <item name="contain" xsi:type="array">
+                        <item name="value" xsi:type="string">1</item>
+                        <item name="label" xsi:type="string" translate="true">Contain</item>
+                    </item>
+                    <item name="not_contain" xsi:type="array">
+                        <item name="value" xsi:type="string">2</item>
+                        <item name="label" xsi:type="string" translate="true">Does not contain</item>
+                    </item>
+                    <item name="is_match" xsi:type="array">
+                        <item name="value" xsi:type="string">3</item>
+                        <item name="label" xsi:type="string" translate="true">Is</item>
+                    </item>
+                    <item name="not_match" xsi:type="array">
+                        <item name="value" xsi:type="string">4</item>
+                        <item name="label" xsi:type="string" translate="true">Is not</item>
+                    </item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="editor" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Rule Condition</item>
+                </item>
+            </argument>
+        </column>
+        <column name="chat_active">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="array">
+                    <item name="disable" xsi:type="array">
+                        <item name="value" xsi:type="string">0</item>
+                        <item name="label" xsi:type="string" translate="true">Inactive</item>
+                    </item>
+                    <item name="enable" xsi:type="array">
+                        <item name="value" xsi:type="string">1</item>
+                        <item name="label" xsi:type="string" translate="true">Active</item>
+                    </item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                    <item name="editor" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">LiveChat Status</item>
+                </item>
+            </argument>
+        </column>
+        <actionsColumn name="actions" class="Aligent\LiveChat\Ui\Component\Listing\Column\ItemActions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">rule_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>
