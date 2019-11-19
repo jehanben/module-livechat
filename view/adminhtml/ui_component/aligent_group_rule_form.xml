@@ -49,7 +49,7 @@
                     <item name="placeholder" xsi:type="string" translate="true">Add group rule name</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
-                        <item name="max_text_length" xsi:type="number">12</item>
+                        <item name="max_text_length" xsi:type="number">24</item>
                     </item>
                 </item>
             </argument>
